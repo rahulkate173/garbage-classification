@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Garbage Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Garbage Classification</h1>
+      <p class="lead">Upload an image and the model server will classify it.</p>
+
+      <form id="uploadForm">
+        <div class="preview">
+          <img id="previewImg" alt="preview" src="" />
+        </div>
+        <input type="file" id="fileInput" name="file" accept="image/*" />
+        <button type="submit" id="submitBtn">Classify</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <h2>Result</h2>
+        <p><strong>Label:</strong> <span id="label"></span></p>
+        <p><strong>Confidence:</strong> <span id="conf"></span></p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
